@@ -5,8 +5,8 @@ DROP TABLE IF EXISTS patients, doctors, reviews CASCADE;
 CREATE TABLE patients (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
-    password VARCHAR(255) NOT NULL,
-    email VARCHAR(255) NOT NULL UNIQUE
+    email VARCHAR(255) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE doctors (
@@ -24,7 +24,7 @@ CREATE TABLE reviews (
     doctor_id INT,
     patient_id INT,
     FOREIGN KEY(doctor_id) REFERENCES doctors(id),
-    FOREIGN KEY(patient_id) REFERENCES patients(id),
+    FOREIGN KEY(patient_id) REFERENCES patients(id)
 );
 
 
