@@ -1,11 +1,10 @@
-const comparePasswords = require('../utils/comparePassword');
-const signInValidate = require('../validation/signInValidate');
-const checkUserQuery = require('../database/queries/checkUserQuery');
-const sendTokens = require('../utils/jwtSign');
+const loginValidate = require('../../validation/loginValidate');
+const { checkUserQuery } = require('../../database/queries/index');
+const { sendTokens, comparePasswords } = require('../../utils/index');
 
-const signIn = (req, res) => {
+const login = (req, res) => {
   const { email, password } = req.body;
-  signInValidate(req.body).then(() => {
+  loginValidate(req.body).then(() => {
     checkUserQuery(email).then((result) => {
       if (result.rows[0]) {
         comparePasswords(password, result.rows[0].password).then((value) => {
@@ -16,6 +15,7 @@ const signIn = (req, res) => {
     }).catch((err) => res.json({ message: err }));
   }).catch((err) => {
     const errorList = [];
+    console.log(err);
     err.details.forEach((error) => {
       errorList.push(error.message);
     });
@@ -23,4 +23,4 @@ const signIn = (req, res) => {
   });
 };
 
-module.exports = signIn;
+module.exports = login;

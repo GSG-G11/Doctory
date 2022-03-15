@@ -1,4 +1,4 @@
-const pool = require('../config/connection');
+const pool = require('../../config/connection');
 
 const checkUserQuery = (email) => pool.query({
   text: 'SELECT * FROM patients WHERE email = ($1);',

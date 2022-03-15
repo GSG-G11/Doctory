@@ -1,4 +1,4 @@
-const getReviewQuery = require('../../database/queries/Reviews/getReviewsQuery')
+const { getReviewQuery } = require('../../database/queries/index');
 
 const viewAllReview = (req, res) => {
     getReviewQuery(req.params.id)

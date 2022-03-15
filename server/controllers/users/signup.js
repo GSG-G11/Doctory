@@ -1,8 +1,6 @@
-const signupValidate = require('../validation/signupValidate');
-const hashPassword = require('../utils/hashPassword');
-const addUserQuery = require('../database/queries/signupQuery');
-const checkUserQuery = require('../database/queries/checkUserQuery');
-const sendTokens = require('../utils/jwtSign');
+const signupValidate = require('../../validation/signupValidate');
+const { addUserQuery, checkUserQuery } = require('../../database/queries/index');
+const { sendTokens, hashPassword } = require('../../utils/index');
 
 const signup = (req, res) => {
   const { name, email, password } = req.body;
