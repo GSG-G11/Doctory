@@ -1,5 +1,5 @@
-require('env2')('.env');
 const { Pool } = require('pg');
+require('env2')('.env');
 
 let DB_URL = '';
 let sslValue = false;

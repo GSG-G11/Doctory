@@ -1,6 +1,6 @@
 const joi = require('joi');
 
-const signInValidate = (dataObj) => {
+const loginValidate = (dataObj) => {
   const schema = joi.object({
     email: joi.string().email().required(),
     password: joi.string().alphanum().min(8).required(),
@@ -9,4 +9,4 @@ const signInValidate = (dataObj) => {
   return schema.validateAsync(dataObj, { abortEarly: false });
 };
 
-module.exports = signInValidate;
+module.exports = loginValidate;

@@ -1,10 +1,9 @@
 const jwt = require('jsonwebtoken');
-const { JWT_SECRET } = require('env2')('.env');
+require('env2')('.env');
 
 const verifyToken = (req, res, next) => {
-  const { token } = req.cookies;
-  if (token) {
-    jwt.verify(token, JWT_SECRET, (err, decoded) => {
+  if (req.cookies.token) {
+    jwt.verify(req.cookies.token, process.env.JWT_SECRET, (err, decoded) => {
       if (err) res.status(401).send('Unauthorized');
       else next();
     });

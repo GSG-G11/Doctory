@@ -1,15 +1,15 @@
-const signin = require('./signin');
-const signup = require('./signup');
+const login = require('./users/login');
+const signup = require('./users/signup');
 const allDoctors = require('./doctors/doctor');
 const doctorInfo = require('./doctors/doctorInfo');
-const addReview = require('./reviews/addreview');
-const allreviews = require('./reviews/reviews');
+const addReview = require('./reviews/addReview');
+const allReviews = require('./reviews/reviews');
 
 module.exports = {
   signup,
-  signin,
+  login,
   doctorInfo,
   allDoctors,
-  allreviews,
-  addReview
+  allReviews,
+  addReview,
 };

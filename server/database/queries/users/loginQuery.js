@@ -1,4 +1,4 @@
-const Pool = require('../config/connection');
+const Pool = require('../../config/connection');
 
 const signInUserQuery = (id) => Pool.query({
   text: 'select * from patients where id = $1',

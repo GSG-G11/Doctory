@@ -1,0 +1,29 @@
+POST  http://localhost:8000/signup
+content-type: application/json
+
+{
+    "name": "mohammmad",
+    "email": "mohammmad@gmail.com",
+    "password": "12345678"
+}
+
+###
+POST  http://localhost:8000/login
+content-type: application/json
+
+{
+    "email": "mohammmad@gmail.com",
+    "password": "12345678"
+}
+
+###
+POST  http://localhost:8000/doctors/1/reviews
+content-type: application/json
+
+{
+    "content": "feedback",
+    "patientId": "1"
+}
+
+###
+GET   http://localhost:8000/doctors/1/reviews

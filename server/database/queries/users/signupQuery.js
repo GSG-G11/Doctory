@@ -1,4 +1,4 @@
-const pool = require('../config/connection');
+const pool = require('../../config/connection');
 
 const addUserQuery = (name, email, password) => pool.query({
   text: 'INSERT INTO patients (name, email, password) VALUES ($1, $2, $3) RETURNING * ;',
