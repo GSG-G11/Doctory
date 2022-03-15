@@ -1,4 +1,4 @@
-const { getDoctorInfoQuery } = require('../../database/queries/index');
+const { getDoctorInfoQuery } = require('../../database/queries/doctors/getDoctorInfoQuery');
 
 const doctorInfo = (req, res) => {
   getDoctorInfoQuery(req.params.id)
