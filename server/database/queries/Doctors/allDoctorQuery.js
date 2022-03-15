@@ -1,8 +1,5 @@
 const Pool = require('../../config/connection');
 
-const allDoctorQuery = () => Pool.query({
-  text: 'select password from doctors',
-  values: [],
-});
+const allDoctorQuery = () => Pool.query('select * from doctors;');
 
 module.exports = allDoctorQuery;
