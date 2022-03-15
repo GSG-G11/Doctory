@@ -1,4 +1,4 @@
-const { allDoctorQuery } = require('../../database/queries/doctors/allDoctorQuery');
+const { allDoctorQuery } = require('../../database/queries/index');
 
 const ViewAllDoctor = (req, res) => {
   allDoctorQuery()
