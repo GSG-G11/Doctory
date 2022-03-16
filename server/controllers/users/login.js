@@ -8,10 +8,10 @@ const login = (req, res) => {
     checkUserQuery(email).then((result) => {
       if (result.rows[0]) {
         comparePasswords(password, result.rows[0].password).then((value) => {
-          if (value) sendTokens(res, result.rows[0].email, '/home');
-          else res.json({ message: 'wrong password' });
+          if (value) sendTokens(res, result.rows[0].email, '/');
+          else res.json({ password: 'Wrong Password' });
         }).catch((err) => res.json({ message: err }));
-      } else res.json({ message: 'email does not existed' });
+      } else res.json({ email: 'This email hasn\'t registered yet' });
     }).catch((err) => res.json({ message: err }));
   }).catch((err) => {
     const errorList = [];

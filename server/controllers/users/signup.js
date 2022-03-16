@@ -9,11 +9,11 @@ const signup = (req, res) => {
       checkUserQuery(email).then((result) => {
         if (!result.rows[0]) {
           addUserQuery(name, email, hashedPassword).then(() => {
-            sendTokens(res, email, '/home');
+            sendTokens(res, email, '/');
           }).catch((err) => {
             res.json({ message: err });
           });
-        } else res.json({ message: 'email is existed' });
+        } else res.json({ email: 'This email has already registered' });
       }).catch((err) => res.json({ message: err }));
     }).catch((err) => res.json({ message: err }));
   }).catch((err) => {
