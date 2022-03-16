@@ -1,6 +1,72 @@
-.image {
-  width: 100px;
-  height: 100px;
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Readex+Pro:wght@200;300;400;500;600;700&family=Yeseva+One&display=swap');
+
+:root {
+  --white: #ffffff;
+  --black: #000000;
+  --font: #212226;
+  --yellow: #fcda68;
+  --orange: #ff8c5a;
+  /* --main: #8773ee; */
+  --main: #388DEF;
+  --gray: #f1f1f1;
+}
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Readex Pro', sans-serif;
+}
+
+input::placeholder,
+textarea::placeholder {
+  font-family: 'Readex Pro', sans-serif;
+  font-weight: 300;
+}
+
+body {
+  font-family: 'Readex Pro', sans-serif;
+  width: 100%;
+  height: 100%;
+  background-color: var(--white);
+  display: flex;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  font-family: 'Readex Pro', sans-serif;
+  color: var(--font);
+  text-decoration: none;
+}
+
+/* scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--main);
+  border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--main);
+}
+
+::selection {
+  background-color: var(--main);
 }
 
 .loading {
@@ -17,6 +83,110 @@
   border-radius: 8px;
   z-index: 2;
 }
-body {
-  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif; 
+
+.header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 70px;
+  background-color: var(--main);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 50px;
+  z-index: 1;
+}
+
+.header h1 a {
+  color: var(--white);
+}
+
+.btns button {
+  border-radius: 150px;
+  padding: 10px;
+  background-color: var(--white);
+  color: var(--font);
+}
+
+.btns button:hover {
+  filter: brightness(95%);
+}
+
+.doctors{
+  position: absolute;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 20px;
+  place-items: start;
+  padding: 10px 50px;
+}
+
+.doctors .image {
+  width: 100%;
+  height: 300px;
+  border-radius: 16px;
+}
+
+.name {
+  margin-top: 10px;
+}
+
+#Allreviews {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 70px;
+  margin-top: 10px;
+  padding: 10px 50px;
+}
+
+.header-reviews {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.header-reviews button {
+  border-radius: 150px;
+  padding: 10px;
+  background-color: var(--main);
+  color: var(--white);
+  cursor: pointer;
+}
+
+.header-reviews button:hover {
+  filter: brightness(95%);
+}
+
+#review {
+  width: 100%;
+  margin: 10px 0;
+  background-color: hsl(212, 85%, 95%);
+}
+
+#review ~ p{
+  font-size: 1.2rem;
+  color: var(--main);
+}
+
+.error-wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  text-align: center;
+}
+.error {
+  font-size: 7rem;
+}
+
+.not-found {
+  font-size: 4rem;
 }
