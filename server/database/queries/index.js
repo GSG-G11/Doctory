@@ -1,10 +1,10 @@
 const addUserQuery = require('./users/signupQuery');
 const loginUserQuery = require('./users/loginQuery');
 const checkUserQuery = require('./users/checkUserQuery');
-const allDoctorQuery = require('./doctors/allDoctorQuery');
-const getDoctorInfoQuery = require('./doctors/getDoctorInfoQuery');
-const addReviewQuery = require('./reviews/AddReviewQuery');
-const getReviewQuery = require('./reviews/getReviewsQuery');
+const allDoctorQuery = require('./Doctors/allDoctorQuery');
+const getDoctorInfoQuery = require('./Doctors/getDoctorInfoQuery');
+const addReviewQuery = require('./Reviews/AddReviewQuery');
+const getReviewQuery = require('./Reviews/getReviewsQuery');
 
 module.exports = {
   addUserQuery,
