@@ -7,5 +7,5 @@ loginFrom.addEventListener('submit', (e) => {
     email: loginFrom.email.value,
     password: loginFrom.password.value,
   };
-  postFetch('/login', data);
+  postFetch('/login', data, ErrorHandler);
 });

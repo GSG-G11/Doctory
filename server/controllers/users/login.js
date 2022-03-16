@@ -9,9 +9,9 @@ const login = (req, res) => {
       if (result.rows[0]) {
         comparePasswords(password, result.rows[0].password).then((value) => {
           if (value) sendTokens(res, result.rows[0].email, '/');
-          else res.json({ password: 'Wrong Password' });
+          else res.json({ message: 'Wrong Password' });
         }).catch((err) => res.json({ message: err }));
-      } else res.json({ email: 'This email hasn\'t registered yet' });
+      } else res.json({ message: 'This email hasn\'t registered yet' });
     }).catch((err) => res.json({ message: err }));
   }).catch((err) => {
     const errorList = [];

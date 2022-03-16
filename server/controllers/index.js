@@ -8,6 +8,8 @@ const doctorInfo = require('./doctors/doctorInfo');
 const addReview = require('./reviews/addReview');
 const allReviews = require('./reviews/reviews');
 const doctorDetailsPage = require('./pages/doctorDetails');
+const logout = require('./users/logout');
+const getDecoded = require('./users/getIdByCookie');
 
 module.exports = {
   signup,
@@ -20,4 +22,6 @@ module.exports = {
   allReviews,
   addReview,
   doctorDetailsPage,
+  getDecoded,
+  logout
 };

@@ -60,5 +60,5 @@ signupFrom.addEventListener('submit', (e) => {
     email: signupFrom.email.value,
     password: signupFrom.password.value,
   };
-  postFetch('/signup', data);
+  postFetch('/signup', data, ErrorHandler);
 });

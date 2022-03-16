@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken');
 require('env2')('.env');
 
-const createAccessToken = (email) => jwt.sign({ email }, process.env.JWT_SECRET, { expiresIn: '15m' });
+const createAccessToken = (user) => jwt.sign(user, process.env.JWT_SECRET, { expiresIn: '15m' });
 
 const sendAccessToken = (res, token, destination) => {
   res.cookie('access', token, {
@@ -11,8 +11,8 @@ const sendAccessToken = (res, token, destination) => {
   }).redirect(destination);
 };
 
-const sendTokens = async (res, email, destination) => {
-  const accessToken = await createAccessToken(email);
+const sendTokens = async (res, user, destination) => {
+  const accessToken = await createAccessToken(user);
   sendAccessToken(res, accessToken, destination);
 };
 
