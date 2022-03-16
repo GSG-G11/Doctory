@@ -6,7 +6,6 @@
   --font: #212226;
   --yellow: #fcda68;
   --orange: #ff8c5a;
-  /* --main: #8773ee; */
   --main: #388DEF;
   --gray: #f1f1f1;
 }
@@ -165,13 +164,20 @@ a {
   filter: brightness(95%);
 }
 
-#review {
+.singleDiv {
   width: 100%;
+  height: auto;
   margin: 10px 0;
+  padding: 15px 50px;
   background-color: hsl(212, 85%, 95%);
+  border: 1px solid #ccc;
 }
-
-#review ~ p{
+p.username {
+  color: #388def;
+  margin-bottom: 1%;
+}
+.singleDiv ~ p{
+  margin: 10px;
   font-size: 1.2rem;
   color: var(--main);
 }

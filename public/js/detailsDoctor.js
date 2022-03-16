@@ -17,11 +17,13 @@ addReviewBtn.addEventListener('click', async () => {
 
   if (text) {
     const cookiehandel = (dataObj) => {
+      console.log(dataObj,"jj");
       const data = {
         content: text,
         patientId: dataObj.id,
       };
-      postFetch(`/doctors/${url}/reviews`, data);
+      postFetch(`/doctors/${url}/reviews`, data , console.log);
+      getFetch(`/doctors/${url}/reviews`, reviewsHandel);
       Swal.fire('Your Review was added Succssfully!');
     };
     getFetch('/cookie', cookiehandel);
