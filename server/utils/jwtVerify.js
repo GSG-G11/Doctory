@@ -4,7 +4,6 @@ require('env2')('.env');
 const verifyToken = (req, res, next) => {
   if (req.cookies.access) {
     jwt.verify(req.cookies.access, process.env.JWT_SECRET, (err, decoded) => {
-      console.log(decoded);
       if (err) res.status(401).json({ message: 'Unauthorized' });
       else next();
     });
