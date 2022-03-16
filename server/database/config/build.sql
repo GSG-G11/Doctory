@@ -27,6 +27,12 @@ CREATE TABLE reviews (
     FOREIGN KEY(patient_id) REFERENCES patients(id)
 );
 
+INSERT INTO
+    patients (name, email, password)
+VALUES
+    ('Mohammad', 'm@gmail.com', 'Mm123456'),
+    ('Manar', 'n@gmail.com', 'Mm123456'),
+    ('Nabil', 'a@gmail.com', 'Mm123456');
 
 INSERT INTO
     doctors (name, department, descreption, Img_URL, phone)
@@ -36,4 +42,12 @@ VALUES
     ('Nadin Nusrat', 'Neurology', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry' ,'https://userstock.io/data/wp-content/uploads/2020/06/jack-finnigan-rriAI0nhcbc-300x300.jpg','0587965423'),
     ('Mona El-faisal', 'Pathology','Lorem Ipsum is simply dummy text of the printing and typesetting industry' ,'https://userstock.io/data/wp-content/uploads/2020/06/aiony-haust-3TLl_97HNJo-300x300.jpg','0587965423'),
     ('Moh Al-Khatib', 'Urology', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry' ,'https://userstock.io/data/wp-content/uploads/2017/07/william-stitt-151773-300x300.jpg','0587965423');
+
+INSERT INTO
+    reviews (content, doctor_id, patient_id)
+VALUES
+    ('Lorem Ipsum is simply dummy text of the printing and typesetting industry', '1', '1'),
+    ('Lorem Ipsum is simply dummy text of the printing and typesetting industry', '1', '2'),
+    ('Lorem Ipsum is simply dummy text of the printing and typesetting industry', '2', '3');
+
 COMMIT;
