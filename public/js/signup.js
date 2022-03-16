@@ -61,5 +61,4 @@ signupFrom.addEventListener('submit', (e) => {
     password: signupFrom.password.value,
   };
   postFetch('/signup', data, ErrorHandler);
-  location.href('/home')
 });

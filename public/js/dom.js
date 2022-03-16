@@ -17,15 +17,24 @@ const handleDoctors = (data) => {
 
 const reviewsHandel = (data) => {
   const reviewDiv = document.querySelector('#review');
+  reviewDiv.textContent = '';
+  
   data.forEach((review) => {
+    const signleReview = document.createElement('div')
+    signleReview.className = 'singleDiv'
+
     const patientName = document.createElement('p');
     patientName.textContent = review.name;
+    patientName.className = 'username'
 
     const content = document.createElement('p');
     content.textContent = review.content;
+    content.className = 'content'
 
-    reviewDiv.appendChild(patientName);
-    reviewDiv.appendChild(content);
+    reviewDiv.appendChild(signleReview);
+    signleReview.appendChild(patientName);
+    signleReview.appendChild(content);
+
   });
 };
 
@@ -35,7 +44,7 @@ const ErrorHandler = (errorList) =>{
   const errorsListDiv = document.querySelector('#errorsList')
   errorsListDiv.textContent = ''
   console.log(errorList.message);
-
+  if(!errorList.message) location.href = "/"
   if(Array.isArray(errorList.message)){
     errorList.message.forEach((error)=>{
       const p = document.createElement('p');
@@ -57,7 +66,7 @@ const showLogout = () => {
   logoutBtn.style.display = 'inline-block';
   signupBtn.style.display = 'none';
   loginBtn.style.display = 'none';
-  if (window.location.href !== 'http://127.0.0.1:8000/') {
+  if (window.location.href.includes('doctors')) {
     addReview.style.display = 'inline-block';
   }
 };
@@ -65,7 +74,7 @@ const hideLogout = () => {
   logoutBtn.style.display = 'none';
   signupBtn.style.display = 'inline-block';
   loginBtn.style.display = 'inline-block';
-  if (window.location.href !== 'http://127.0.0.1:8000/') {
+  if (window.location.href.includes('doctors')) {
     addReview.style.display = 'none';
   }
 };
