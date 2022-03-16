@@ -1,8 +1,5 @@
 /* eslint-disable no-undef */
 window.addEventListener('load', () => {
   getFetch('/doctors', handleDoctors);
+  getFetch('/cookie', checkCookie);
 });
-
-// window.addEventListener('load', () => {
-//   getFetch('/doctors', handleDoctors);
-// });
