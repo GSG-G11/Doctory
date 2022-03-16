@@ -1,0 +1,19 @@
+.image {
+  width: 100px;
+  height: 100px;
+}
+
+.loading {
+  display: none;
+  font-size: 1.5rem;
+  font-weight: 800;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #000;
+  color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  z-index: 2;
+}

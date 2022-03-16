@@ -1,12 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
     <title>Doctory</title>
 </head>
+
 <body>
-    
+    <div class="loading">Loading...</div>
+    <button><a href="/signup">Sign Up</a></button>
+    <button><a href="/login">Login</a></button>
+
+    <div class="doctors">
+
+    </div>
+    <template id="template">
+        <div class="card">
+            <a href="">
+                <img class="image" src="" alt="">
+                <h4 class="name"></h4>
+                <p class="descreption"></p>
+                <p class="department"></p>
+                <p class="phone"></p>
+            </a>
+        </div>
+    </template>
+
+    <script src="/../js/loading.js"></script>
+    <script src="/../js/dom.js"></script>
+    <script src="/../js/getFetch.js"></script>
+    <script src="/../js/postFetch.js"></script>
+    <script src="/../js/home.js"></script>
 </body>
+
 </html>

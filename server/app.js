@@ -1,6 +1,7 @@
 const { join } = require('path');
 const express = require('express');
 const compression = require('compression');
+const cookieParser = require('cookie-parser');
 const { userRouter, doctorRouter } = require('./router/index');
 const { clientError, serverError } = require('./controllers/errors/index');
 
@@ -9,6 +10,7 @@ const app = express();
 app.disable('x-powered-by');
 app.use(compression());
 app.use(express.json());
+app.use(cookieParser());
 require('dotenv').config();
 
 app.use(express.urlencoded({ extended: false }));
