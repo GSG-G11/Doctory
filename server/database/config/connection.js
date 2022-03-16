@@ -17,3 +17,6 @@ const options = {
 };
 
 module.exports = new Pool(options);
+
+
+//\i 'C:\\Users\\hp\\Desktop\\Doctory\\server\\database\\config\\build.sql';

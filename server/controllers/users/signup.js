@@ -2,27 +2,25 @@ const signupValidate = require('../../validation/signupValidate');
 const { addUserQuery, checkUserQuery } = require('../../database/queries/index');
 const { sendTokens, hashPassword } = require('../../utils/index');
 
-const signup = (req, res) => {
-  const { name, email, password } = req.body;
-  signupValidate(req.body).then(() => {
-    hashPassword(password).then((hashedPassword) => {
-      checkUserQuery(email).then((result) => {
-        if (!result.rows[0]) {
-          addUserQuery(name, email, hashedPassword).then(() => {
-            sendTokens(res, email, '/');
-          }).catch((err) => {
-            res.json({ message: err });
-          });
-        } else res.json({ email: 'This email has already registered' });
-      }).catch((err) => res.json({ message: err }));
-    }).catch((err) => res.json({ message: err }));
-  }).catch((err) => {
-    const errorList = [];
-    err.details.forEach((error) => {
-      errorList.push(error.message);
-    });
-    res.json({ message: errorList });
-  });
+const signup = async (req, res) => {
+  try {
+    const { name, email, password } = req.body;
+    const { error } = signupValidate(req.body);
+    if (error) res.json({ message: error.details.filter((err) => err.message) });
+    else {
+      const hashedPassword = await hashPassword(password);
+      const user = await checkUserQuery(email);
+      if (!user.rows[0]) {
+        const addedUser = await addUserQuery(name, email, hashedPassword);
+        if (addedUser) {
+          const data = await checkUserQuery(email);
+          sendTokens(res, { id: data.rows[0].id, email: data.rows[0].email }, '/home');
+        }
+      } else res.json({ message: 'This email has already registered' });
+    }
+  } catch (err) {
+    res.json({ message: err });
+  }
 };
 
 module.exports = signup;
