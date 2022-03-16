@@ -29,11 +29,15 @@ const reviewsHandel = (data) => {
   });
 };
 
-const ErrorHandler = (errorList) => {
-  const errorsListDiv = document.querySelector('#errorsList');
 
-  if (Array.isArray(errorList.message)) {
-    errorList.message.forEach((error) => {
+const ErrorHandler = (errorList) =>{
+
+  const errorsListDiv = document.querySelector('#errorsList')
+  errorsListDiv.textContent = ''
+  console.log(errorList.message);
+
+  if(Array.isArray(errorList.message)){
+    errorList.message.forEach((error)=>{
       const p = document.createElement('p');
       p.textContent = error.message;
       errorsListDiv.appendChild(p);

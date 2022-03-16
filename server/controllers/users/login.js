@@ -8,7 +8,7 @@ const login = (req, res) => {
     checkUserQuery(email).then((result) => {
       if (result.rows[0]) {
         comparePasswords(password, result.rows[0].password).then((value) => {
-          if (value) sendTokens(res, result.rows[0].email, '/');
+          if (value) sendTokens(res, result.rows[0].email, '/home');
           else res.json({ message: 'Wrong Password' });
         }).catch((err) => res.json({ message: err }));
       } else res.json({ message: 'This email hasn\'t registered yet' });
