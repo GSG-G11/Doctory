@@ -32,7 +32,9 @@ const reviewsHandel = (data) =>{
 }
 
 const ErrorHandler = (errorList) =>{
+
   const errorsListDiv = document.querySelector('#errorsList')
+  errorsListDiv.textContent = ''
   console.log(errorList.message);
 
   if(Array.isArray(errorList.message)){

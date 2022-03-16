@@ -4,7 +4,7 @@ const signupFrom = document.querySelector('#signup-form');
 const myInput = document.getElementById('password');
 const message = document.getElementById('message');
 
-myInput.onfocus = () => { message.style.display = 'block'; };
+myInput.onfocus = () => { message.style.display = 'flex'; };
 myInput.onblur = () => { message.style.display = 'none'; };
 
 myInput.onkeyup = () => {
@@ -61,4 +61,5 @@ signupFrom.addEventListener('submit', (e) => {
     password: signupFrom.password.value,
   };
   postFetch('/signup', data, ErrorHandler);
+  location.href('/home')
 });

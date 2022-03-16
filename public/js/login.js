@@ -8,4 +8,6 @@ loginFrom.addEventListener('submit', (e) => {
     password: loginFrom.password.value,
   };
   postFetch('/login', data, ErrorHandler);
+  location.href('/home')
+
 });

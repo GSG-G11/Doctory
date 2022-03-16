@@ -6,6 +6,9 @@ router.get('/login', loginPage);
 router.post('/signup', signup);
 router.post('/login', login);
 router.get('/logout' , logout)
+router.get('/home' , (req,res) =>{
+    res.status(200).json({massage : 'home Page'})
+})
 router.get('/cookie' , getDecoded)
 
 module.exports = router;

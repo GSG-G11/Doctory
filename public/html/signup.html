@@ -5,42 +5,68 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="https://icons.iconarchive.com/icons/icons-land/medical/256/People-Doctor-Male-icon.png">
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/signup.css">
   <title>Sign Up</title>
 </head>
 
 <body>
-  <div class="switch">
-    I have already an account<a href="/login">Login</a>
+
+  <div class="container">
+    <div class="forms-container">
+      <div class="signin-signup">
+        <form action="#" class="sign-up-form signup-form">
+          <h2 class="title">Sign up</h2>
+
+          <div class="wrap-input input-field">
+            <i class="fas fa-envelope"></i>
+            <input type="text" placeholder="Full Name" name="name" id="name" placeholder="Enter Your Full Name" required/>
+          </div>
+
+          <div class="wrap-input input-field">
+            <i class="fas fa-envelope"></i>
+            <input type="email" placeholder="Email" name="email" name="email" placeholder="Enter Your Email" required/>
+          </div>
+
+          <div class="wrap-input input-field">
+            <i class="fas fa-lock"></i>
+            <input type="password" placeholder="Password" placeholder="Enter Your Password" id="password"
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required/>
+          </div>
+
+          <input type="submit" class="btn" value="Sign up" id="signup-btn"/>
+        </form>
+      </div>
+    </div>
+
+    <div class="panels-container">
+      <div class="panel left-panel">
+        <div class="content">
+          <h3>One of us ?</h3>
+          <p>
+            I have already an account.
+          </p>
+          <div class="switch">
+            <button class="btn transparent" id="sign-in-btn">
+              <a href="/login">Sign In</a>
+            </button>
+          </div>
+
+        </div>
+        <div id="message">
+            <h4>Password must contain the following:</h4>
+            <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+            <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+            <p id="number" class="invalid">A <b>number</b></p>
+            <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+          </div>
+          <div id="errorsList"></div>
+      </div>
+    </div>
   </div>
-  <form id="signup-form">
-    <div class="wrap-input">
-      <label for="name">Full Name</label>
-      <input type="text" id="name" name="name" placeholder="Enter Your Name" required>
-    </div>
-    <div class="wrap-input">
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" placeholder="Enter Your Email" required>
-    </div>
-    <div class="wrap-input">
-      <label for="password">Password</label>
-      <input type="password" id="password" name="password" placeholder="Enter Your Password"
-        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
-    </div>
-    <div id="message">
-      <h3>Password must contain the following:</h3>
-      <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
-      <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
-      <p id="number" class="invalid">A <b>number</b></p>
-      <p id="length" class="invalid">Minimum <b>8 characters</b></p>
-    </div>
-    <div id="errorsList"></div>
-    <div class="wrap-input">
-      <input type="submit" id="signup-btn" value="Sign Up">
-    </div>
-  </form>
-  <div class="loading">Loading...</div>
+  
+  <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
   <script src="/../js/loading.js"></script>
   <script src="/../js/dom.js"></script>
   <script src="/../js/postFetch.js"></script>
