@@ -75,7 +75,6 @@ how we made it?
 
 ### :male-construction-worker: Team Members
 
-- [Nabil AbuSaaban]()
-- [Mohammed AlHabil]()
-- [Manar AbdElHadi]()
-
+- [Nabil AbuShaban](https://github.com/nabilramy)
+- [Mohammed AlHabil](https://github.com/MohammadAlHabil)
+- [Manar AbdElHadi](https://github.com/manar-abed)
