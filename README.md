@@ -1,4 +1,4 @@
-## :female-doctor: Doctory
+## Doctory
 
 > [Live Website](https://gsg-doctory.herokuapp.com/) :copyright:
 ---
