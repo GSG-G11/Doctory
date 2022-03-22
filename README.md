@@ -66,7 +66,7 @@ how we made it?
 
 
 ```
-- git clone https://github.com/GSG-G10/Umar-Reddit.git
+- git clone https://github.com/GSG-G11/Doctory.git
 - cd Umar-Reddit
 - npm i
 - Ask me for the .env file
